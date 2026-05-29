@@ -1,627 +1,461 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>欢迎来到我的主页！ | 我的创新实验主页</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="欢迎来到我的主页！" />
-<meta name="author" content="zhaojie-jie" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="这是使用 Jekyll 和 Docker 构建的个人主页" />
-<meta property="og:description" content="这是使用 Jekyll 和 Docker 构建的个人主页" />
-<link rel="canonical" href="https://zhaojie-jie.github.io/" />
-<meta property="og:url" content="https://zhaojie-jie.github.io/" />
-<meta property="og:site_name" content="我的创新实验主页" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="欢迎来到我的主页！" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"zhaojie-jie"},"description":"这是使用 Jekyll 和 Docker 构建的个人主页","headline":"欢迎来到我的主页！","name":"我的创新实验主页","url":"https://zhaojie-jie.github.io/"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <link rel="stylesheet" href="/assets/css/style.css?v=55527d58fbedfad50892ec9c92b9bd81fb532e2e">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1><a href="https://zhaojie-jie.github.io/">我的创新实验主页</a></h1>
-
-        
-
-        <p>这是使用 Jekyll 和 Docker 构建的个人主页</p>
-
-        
-
-        
-        <p class="view"><a href="https://github.com/zhaojie-jie">View My GitHub Profile</a></p>
-        
-
-        
-      </header>
-      <section>
-
-      <h1 id="欢迎来到我的主页">欢迎来到我的主页！</h1>
-
-<p>这是我的创新实验作业。</p>
-
-<ul>
-  <li>姓名：赵杰</li>
-  <li>学号：20231060331</li>
-</ul>
-
-<p>在这里我将记录我的学习过程。</p>
-
-<style>
-  /* 暗黑极客风格全局样式 */
-  :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #141414;
-    --bg-card: #1a1a1a;
-    --neon-green: #00ff00;
-    --neon-green-dim: #00cc00;
-    --text-primary: #e0e0e0;
-    --text-secondary: #888888;
-    --border-color: #333333;
-  }
-  
-  body {
-    background-color: var(--bg-primary) !important;
-    color: var(--text-primary) !important;
-    font-family: 'Courier New', monospace !important;
-  }
-  
-  /* 导航栏样式 */
-  .geek-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--neon-green);
-    z-index: 1000;
-    padding: 15px 0;
-  }
-  
-  .geek-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .geek-nav a {
-    color: var(--neon-green);
-    text-decoration: none;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  
-  .geek-nav a:hover {
-    text-shadow: 0 0 10px var(--neon-green);
-  }
-  
-  .geek-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--neon-green);
-    transition: width 0.3s ease;
-  }
-  
-  .geek-nav a:hover::after {
-    width: 100%;
-  }
-  
-  /* 英雄区域 */
-  .hero-section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 80px;
-  }
-  
-  #matrix-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-  
-  .glitch-name {
-    font-size: 4rem;
-    font-weight: bold;
-    color: var(--neon-green);
-    text-shadow: 0 0 20px var(--neon-green);
-    margin-bottom: 20px;
-    animation: glitch 2s infinite;
-  }
-  
-  @keyframes glitch {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-  }
-  
-  .typewriter {
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    border-right: 3px solid var(--neon-green);
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
-    max-width: 0;
-  }
-  
-  @keyframes typing {
-    to { max-width: 100%; }
-  }
-  
-  @keyframes blink {
-    50% { border-color: transparent; }
-  }
-  
-  .motto {
-    margin-top: 30px;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    font-style: italic;
-  }
-  
-  .motto::before {
-    content: '"';
-    color: var(--neon-green);
-    font-size: 2rem;
-  }
-  
-  .motto::after {
-    content: '"';
-    color: var(--neon-green);
-    font-size: 2rem;
-  }
-  
-  /* 内容区块通用样式 */
-  .section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    color: var(--neon-green);
-    text-align: center;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    position: relative;
-  }
-  
-  .section-title::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 3px;
-    background: var(--neon-green);
-    margin: 20px auto;
-    box-shadow: 0 0 10px var(--neon-green);
-  }
-  
-  /* 卡片样式 */
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 30px;
-    margin: 20px 0;
-    transition: all 0.3s ease;
-  }
-  
-  .card:hover {
-    border-color: var(--neon-green);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
-    transform: translateY(-5px);
-  }
-  
-  /* 关于我 */
-  .about-content {
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 2;
-    color: var(--text-secondary);
-  }
-  
-  .highlight {
-    color: var(--neon-green);
-    font-weight: bold;
-  }
-  
-  /* 教育背景 */
-  .edu-card {
-    text-align: center;
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
-  }
-  
-  .edu-school {
-    font-size: 2rem;
-    color: var(--neon-green);
-    margin-bottom: 10px;
-  }
-  
-  .edu-major {
-    font-size: 1.3rem;
-    color: var(--text-primary);
-  }
-  
-  .edu-year {
-    color: var(--text-secondary);
-    margin-top: 10px;
-  }
-  
-  /* 技能标签 */
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  .skill-tag {
-    background: var(--bg-secondary);
-    border: 1px solid var(--neon-green);
-    color: var(--neon-green);
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-  
-  .skill-tag:hover {
-    background: var(--neon-green);
-    color: var(--bg-primary);
-    box-shadow: 0 0 15px var(--neon-green);
-  }
-  
-  /* 博客卡片 */
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  }
-  
-  .blog-card {
-    background: var(--bg-card);
-    border-left: 4px solid var(--neon-green);
-    padding: 25px;
-    transition: all 0.3s ease;
-  }
-  
-  .blog-card:hover {
-    transform: translateX(10px);
-  }
-  
-  .blog-date {
-    color: var(--neon-green-dim);
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-  }
-  
-  .blog-title {
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-  }
-  
-  .blog-summary {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  
-  /* 兴趣爱好 */
-  .hobby-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
-  
-  .hobby-card {
-    text-align: center;
-    padding: 40px;
-    background: var(--bg-card);
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-  }
-  
-  .hobby-card:hover {
-    border-color: var(--neon-green);
-    transform: scale(1.05);
-  }
-  
-  .hobby-icon {
-    font-size: 4rem;
-    margin
--bottom: 20px;
-  }
-  
-  .hobby-name {
-    font-size: 1.3rem;
-    color: var(--neon-green);
-    margin-bottom: 10px;
-  }
-  
-  .hobby-desc {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-  }
-  
-  /* 页脚 */
-  .geek-footer {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--neon-green);
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .footer-quote {
-    font-style: italic;
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
-  }
-  
-  .footer-links a {
-    color: var(--neon-green);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  .footer-links a:hover {
-    text-shadow: 0 0 10px var(--neon-green);
-  }
-  
-  .copyright {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-  }
-</style>
-
-<!-- 导航栏 -->
-<nav class="geek-nav">
-  <ul>
-    <li><a href="#home">首页</a></li>
-    <li><a href="#about">关于我</a></li>
-    <li><a href="#education">教育背景</a></li>
-    <li><a href="#skills">技能特长</a></li>
-    <li><a href="#blog">博客文章</a></li>
-    <li><a href="#hobbies">兴趣爱好</a></li>
-  </ul>
-</nav>
-
-<!-- 英雄区域 -->
-<section class="hero-section" id="home">
-  <canvas id="matrix-canvas"></canvas>
-  <div class="hero-content">
-    <h1 class="glitch-name">赵杰</h1>
-    <div class="typewriter">创新实验作业展示</div>
-    <p class="motto">代码改变世界，创新引领未来</p>
-  </div>
-</section>
-
-<!-- 关于我 -->
-<section class="section" id="about">
-  <h2 class="section-title">关于我</h2>
-  <div class="card">
-    <div class="about-content">
-      <p>你好！我是<span class="highlight">赵杰</span>，学号<span class="highlight">20231060331</span>。</p>
-      <p>这是一份创新实验作业，我尝试用前端技术打造一个具有极客风格的个人主页。</p>
-      <p>在这里，我将记录我的学习历程，分享技术心得，展示项目成果。</p>
-      <p>希望通过不断的学习与实践，能够在技术道路上走得更远。</p>
-    </div>
-  </div>
-</section>
-
-<!-- 教育背景 -->
-<section class="section" id="education">
-  <h2 class="section-title">教育背景</h2>
-  <div class="card edu-card">
-    <div class="edu-school">某某大学</div>
-    <div class="edu-major">计算机科学与技术专业</div>
-    <div class="edu-year">2023年 - 至今</div>
-  </div>
-</section>
-
-<!-- 技能特长 -->
-<section class="section" id="skills">
-  <h2 class="section-title">技能特长</h2>
-  <div class="card">
-    <div class="skills-container">
-      <span class="skill-tag">网页前端开发</span>
-      <span class="skill-tag">HTML5</span>
-      <span class="skill-tag">CSS3</span>
-      <span class="skill-tag">JavaScript</span>
-      <span class="skill-tag">响应式设计</span>
-      <span class="skill-tag">版本控制工具</span>
-      <span class="skill-tag">代码调试</span>
-      <span class="skill-tag">问题解决能力</span>
-    </div>
-  </div>
-</section>
-
-<!-- 博客文章 -->
-<section class="section" id="blog">
-  <h2 class="section-title">博客文章</h2>
-  <div class="blog-grid">
-    <div class="card blog-card">
-      <div class="blog-date">2024年1月15日</div>
-      <div class="blog-title">如何打造极客风格的个人网站</div>
-      <div class="blog-summary">分享我在设计这个主页时的思路与技巧，包括暗色主题的选择、霓虹绿配色方案的应用，以及矩阵雨动画效果的实现方法。</div>
-    </div>
-    <div class="card blog-card">
-      <div class="blog-date">2024年1月10日</div>
-      <div class="blog-title">前端开发学习路线总结</div>
-      <div class="blog-summary">整理了我学习前端开发过程中的经验，从基础语法到框架应用，希望能给初学者一些参考和帮助。</div>
-    </div>
-    <div class="card blog-card">
-      <div class="blog-date">2024年1月5日</div>
-      <div class="blog-title">创新实验课程心得体会</div>
-      <div class="blog-summary">记录我在创新实验课程中的收获与感悟，探讨如何将理论知识与实际项目相结合。</div>
-    </div>
-  </div>
-</section>
-
-<!-- 兴趣爱好 -->
-<section class="section" id="hobbies">
-  <h2 class="section-title">兴趣爱好</h2>
-  <div class="hobby-grid">
-    <div class="card hobby-card">
-      <div class="hobby-icon">💻</div>
-      <div class="hobby-name">编程开发</div>
-      <div class="hobby-desc">热爱编写代码，享受创造的乐趣</div>
-    </div>
-    <div class="card hobby-card">
-      <div class="hobby-icon">📚</div>
-      <div class="hobby-name">技术阅读</div>
-      <div class="hobby-desc">关注前沿技术，持续学习成长</div>
-    </div>
-    <div class="card hobby-card">
-      <div class="hobby-icon">🎮</div>
-      <div class="hobby-name">电子竞技</div>
-      <div class="hobby-desc">适度游戏，放松身心</div>
-    </div>
-    <div class="card hobby-card">
-      <div class="hobby-icon">🎵</div>
-      <div class="hobby-name">音乐欣赏</div>
-      <div class="hobby-desc">编程时的最佳伴侣</div>
-    </div>
-  </div>
-</section>
-
-<!-- 页脚 -->
-<footer class="geek-footer">
-  <div class="footer-quote">"学无止境，勇攀高峰"</div>
-  <div class="footer-links">
-    <a href="mailto:zhaojie@example.com">电子邮箱</a>
-    <a href="#">代码仓库</a>
-    <a href="#">个人博客</a>
-  </div>
-  <div class="copyright">© 2024 赵杰. 保留所有权利。</div>
-</footer>
-
-<script>
-  // 矩阵雨动画效果
-  const canvas = document.getElementById('matrix-canvas');
-  const ctx = canvas.getContext('2d');
-  
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  
-  const chars = '赵杰创新实验作业0123456789ABCDEF';
-  const fontSize = 14;
-  const columns = canvas.width / fontSize;
-  const drops = [];
-  
-  for (let i = 0; i < columns; i++) {
-    drops[i] = 1;
-  }
-  
-  function drawMatrix() {
-    ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    ctx.fillStyle = '#00ff00';
-    ctx.font = fontSize + 'px monospace';
-    
-    for (let i = 0; i < drops.length; i++) {
-      const text = chars.charAt(Math.floor(Math.random() * chars.length));
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-      
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
+<p>&lt;!DOCTYPE html&gt;</p>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>赵杰的个人主页</title>
+  <style>
+    /* 暗黑极客风格全局样式 */
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #141414;
+      --bg-card: #1a1a1a;
+      --neon-green: #00ff00;
+      --neon-green-dim: #00cc00;
+      --text-primary: #e0e0e0;
+      --text-secondary: #888888;
+      --border-color: #333333;
     }
-  }
-  
-  setInterval(drawMatrix, 35);
-  
-  // 窗口大小改变时重新设置画布尺寸
-  window.addEventListener('resize', () => {
+    
+    body {
+      background-color: var(--bg-primary) !important;
+      color: var(--text-primary) !important;
+      font-family: 'Courier New', monospace !important;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* 导航栏样式 */
+    .geek-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--neon-green);
+      z-index: 1000;
+      padding: 15px 0;
+    }
+    
+    .geek-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .geek-nav a {
+      color: var(--neon-green);
+      text-decoration: none;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .geek-nav a:hover {
+      text-shadow: 0 0 10px var(--neon-green);
+    }
+    
+    .geek-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--neon-green);
+      transition: width 0.3s ease;
+    }
+    
+    .geek-nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* 英雄区域 */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    
+    #matrix-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    
+    .glitch-name {
+      font-size: 4rem;
+      font-weight: bold;
+      color: var(--neon-green);
+      text-shadow: 0 0 20px var(--neon-green);
+      margin-bottom: 20px;
+      animation: glitch 2s infinite;
+    }
+    
+    @keyframes glitch {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+    }
+    
+    .typewriter {
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      border-right: 3px solid var(--neon-green);
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+      max-width: 0;
+      margin: 0 auto;
+    }
+    
+    @keyframes typing {
+      to { max-width: 100%; }
+    }
+    
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    
+    .motto {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+    
+    .motto::before, .motto::after {
+      content: '"';
+      color: var(--neon-green);
+      font-size: 2rem;
+    }
+    
+    /* 内容区块通用样式 */
+    .section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--neon-green);
+      text-align: center;
+      margin-bottom: 50px;
+      letter-spacing: 5px;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: var(--neon-green);
+      margin: 20px auto;
+      box-shadow: 0 0 10px var(--neon-green);
+    }
+    
+    /* 卡片样式 */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 20px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      border-color: var(--neon-green);
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+      transform: translateY(-5px);
+    }
+    
+    /* 关于我 */
+    .about-content {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 2;
+      color: var(--text-secondary);
+    }
+    
+    .highlight {
+      color: var(--neon-green);
+      font-weight: bold;
+    }
+    
+    /* 教育背景 */
+    .edu-card {
+      text-align: center;
+      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+    }
+    
+    .edu-school {
+      font-size: 2rem;
+      color: var(--neon-green);
+      margin-bottom: 10px;
+    }
+    
+    .edu-major {
+      font-size: 1.3rem;
+      color: var(--text-primary);
+    }
+    
+    .edu-year {
+      color: var(--text-secondary);
+      margin-top: 10px;
+    }
+    
+    /* 技能标签 */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .skill-tag {
+      background: var(--bg-secondary);
+      border: 1px solid var(--neon-green);
+      color: var(--neon-green);
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .skill-tag:hover {
+      background: var(--neon-green);
+      color: var(--bg-primary);
+      box-shadow: 0 0 15px var(--neon-green);
+    }
+    
+    /* 博客卡片 */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .blog-card {
+      background: var(--bg-card);
+      border-left: 4px solid var(--neon-green);
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+    
+    .blog-card:hover {
+      transform: translateX(10px);
+    }
+    
+    .blog-date {
+      color: var(--neon-green-dim);
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    
+    .blog-title {
+      color: var(--text-primary);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+    
+    .blog-summary {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    /* 兴趣爱好 */
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .hobby-card {
+      text-align: center;
+      padding: 40px;
+      background: var(--bg-card);
+      border-radius: 15px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+    
+    .hobby-card:hover {
+      border-color: var(--neon-green);
+      transform: scale(1.05);
+    }
+    
+    .hobby-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    
+    .hobby-name {
+      font-size: 1.3rem;
+      color: var(--neon-green);
+      margin-bottom: 10px;
+    }
+    
+    /* 页脚 */
+    .geek-footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--neon-green);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links a {
+      color: var(--neon-green);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      text-shadow: 0 0 10px var(--neon-green);
+    }
+    
+    .copyright {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="geek-nav">
+    <ul>
+      <li><a href="#home">首页</a></li>
+      <li><a href="#about">关于我</a></li>
+      <li><a href="#education">教育背景</a></li>
+      <li><a href="#skills">技能特长</a></li>
+      <li><a href="#blog">博客文章</a></li>
+      <li><a href="#hobbies">兴趣爱好</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero-section" id="home">
+    <canvas id="matrix-canvas"></canvas>
+    <div class="hero-content">
+      <h1 class="glitch-name">赵杰</h1>
+      <div class="typewriter">智能科学与技术专业</div>
+      <p class="motto">我与我周旋久，宁做我。</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2 class="section-title">关于我</h2>
+    <div class="card">
+      <div class="about-content">
+        <p>你好，我是<span class="highlight">赵杰</span>。</p>
+        <p>目前就读于云南大学智能科学与技术专业（2023级）。</p>
+        <p>这是一个充满极客风格的创新实验作业主页。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <h2 class="section-title">教育背景</h2>
+    <div class="card edu-card">
+      <div class="edu-school">云南大学</div>
+      <div class="edu-major">智能科学与技术</div>
+      <div class="edu-year">2023级</div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2 class="section-title">技能特长</h2>
+    <div class="card">
+      <div class="skills-container">
+        <span class="skill-tag">C语言</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">人工智能基础</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="blog">
+    <h2 class="section-title">博客文章</h2>
+    <div class="blog-grid">
+      <div class="card blog-card">
+        <div class="blog-date">2024年5月29日</div>
+        <div class="blog-title">深入理解 Python 神经网络基础</div>
+        <div class="blog-summary">探讨在智能科学与技术专业中，如何利用 Python 从零构建简单的神经网络模型，解析反向传播算法的核心逻辑。</div>
+      </div>
+      <div class="card blog-card">
+        <div class="blog-date">2024年5月20日</div>
+        <div class="blog-title">C语言指针的进阶应用</div>
+        <div class="blog-summary">结合内存管理的底层原理，总结 C 语言中指针的巧妙用法以及在复杂数据结构中的应用实例。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hobbies">
+    <h2 class="section-title">兴趣爱好</h2>
+    <div class="hobby-grid">
+      <div class="card hobby-card">
+        <div class="hobby-icon">🏸</div>
+        <div class="hobby-name">羽毛球</div>
+      </div>
+      <div class="card hobby-card">
+        <div class="hobby-icon">🏀</div>
+        <div class="hobby-name">篮球</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="geek-footer">
+    <div class="footer-links">
+      <a href="mailto:599802050@qq.com">联系邮箱：599802050@qq.com</a>
+    </div>
+    <div class="copyright">© 2024 赵杰. All Rights Reserved.</div>
+  </footer>
+
+  <script>
+    // 矩阵雨动画效果
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+    
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-  });
-  
-  // 平滑滚动
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-</script>
-
-
-
-      </section>
-      <footer>
-        
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="/assets/js/scale.fix.js"></script>
-  </body>
-</html>
+    
+    const chars = '赵杰智能科学与技术01010101PYTHONCHTML';
+    const fontSize = 14;
+    const columns = canvas.
+</script></body></html>
