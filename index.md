@@ -7,24 +7,26 @@ layout: null
   <meta charset="UTF-8">
   <title>赵杰的个人主页</title>
   <style>
-    /* 暗黑极客风格全局样式 */
+    /* 赛博朋克暗黑极客风格全局样式 */
     :root {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #141414;
-      --bg-card: #1a1a1a;
-      --neon-green: #00ff00;
-      --neon-green-dim: #00cc00;
-      --text-primary: #e0e0e0;
-      --text-secondary: #888888;
-      --border-color: #333333;
+      --bg-primary: #080b10;
+      --bg-secondary: #0f141c;
+      --bg-card: #141b27;
+      --geek-blue: #00d2ff;
+      --geek-blue-dim: #009cbd;
+      --geek-purple: #9d4edd;
+      --text-primary: #f0f4f8;
+      --text-secondary: #94a3b8;
+      --border-color: #243347;
     }
     
     body {
       background-color: var(--bg-primary) !important;
       color: var(--text-primary) !important;
-      font-family: 'Courier New', monospace !important;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
     
     /* 导航栏样式 */
@@ -33,44 +35,45 @@ layout: null
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(10, 10, 10, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--neon-green);
+      background: rgba(8, 11, 16, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 210, 255, 0.3);
       z-index: 1000;
-      padding: 15px 0;
+      padding: 18px 0;
     }
     
     .geek-nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 50px;
       margin: 0;
       padding: 0;
     }
     
     .geek-nav a {
-      color: var(--neon-green);
+      color: var(--text-primary);
       text-decoration: none;
-      font-size: 14px;
-      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 500;
       letter-spacing: 2px;
       transition: all 0.3s ease;
       position: relative;
     }
     
     .geek-nav a:hover {
-      text-shadow: 0 0 10px var(--neon-green);
+      color: var(--geek-blue);
+      text-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
     }
     
     .geek-nav a::after {
       content: '';
       position: absolute;
-      bottom: -5px;
+      bottom: -6px;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--neon-green);
+      background: var(--geek-blue);
       transition: width 0.3s ease;
     }
     
@@ -97,40 +100,39 @@ layout: null
       width: 100%;
       height: 100%;
       z-index: 0;
+      opacity: 0.6;
     }
     
     .hero-content {
       position: relative;
       z-index: 1;
       text-align: center;
+      background: rgba(8, 11, 16, 0.7);
+      padding: 40px 60px;
+      border-radius: 20px;
+      border: 1px solid rgba(36, 51, 71, 0.5);
+      backdrop-filter: blur(5px);
     }
     
     .glitch-name {
-      font-size: 4rem;
-      font-weight: bold;
-      color: var(--neon-green);
-      text-shadow: 0 0 20px var(--neon-green);
-      margin-bottom: 20px;
-      animation: glitch 2s infinite;
-    }
-    
-    @keyframes glitch {
-      0%, 100% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+      margin-bottom: 10px;
+      letter-spacing: 4px;
     }
     
     .typewriter {
-      font-size: 1.5rem;
-      color: var(--text-primary);
-      border-right: 3px solid var(--neon-green);
+      font-size: 1.8rem;
+      color: var(--geek-blue);
+      font-family: 'Courier New', monospace;
+      border-right: 3px solid var(--geek-blue);
       white-space: nowrap;
       overflow: hidden;
-      animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+      animation: typing 3.5s steps(30) 1s forwards, blink 0.75s step-end infinite;
       max-width: 0;
-      margin: 0 auto;
+      margin: 20px auto 0 auto;
     }
     
     @keyframes typing {
@@ -142,220 +144,247 @@ layout: null
     }
     
     .motto {
-      margin-top: 30px;
-      font-size: 1.2rem;
+      margin-top: 25px;
+      font-size: 1.3rem;
       color: var(--text-secondary);
       font-style: italic;
     }
     
-    .motto::before, .motto::after {
-      content: '"';
-      color: var(--neon-green);
-      font-size: 2rem;
-    }
-    
     /* 内容区块通用样式 */
     .section {
-      padding: 80px 20px;
-      max-width: 1200px;
+      padding: 100px 20px;
+      max-width: 1100px;
       margin: 0 auto;
       position: relative;
       z-index: 2;
     }
     
     .section-title {
-      font-size: 2.5rem;
-      color: var(--neon-green);
+      font-size: 2.6rem;
+      color: #fff;
       text-align: center;
-      margin-bottom: 50px;
-      letter-spacing: 5px;
+      margin-bottom: 60px;
+      letter-spacing: 4px;
       position: relative;
     }
     
     .section-title::after {
       content: '';
       display: block;
-      width: 100px;
-      height: 3px;
-      background: var(--neon-green);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--geek-blue), var(--geek-purple));
       margin: 20px auto;
-      box-shadow: 0 0 10px var(--neon-green);
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
     }
     
-    /* 卡片样式 */
+    /* 卡片基础样式 */
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 30px;
+      border-radius: 14px;
+      padding: 40px;
       margin: 20px 0;
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
     .card:hover {
-      border-color: var(--neon-green);
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+      border-color: var(--geek-blue);
+      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
       transform: translateY(-5px);
     }
     
-    /* 关于我 */
-    .about-content {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 2;
+    /* 关于我扩充 */
+    .about-text {
+      font-size: 1.15rem;
+      line-height: 2.2;
       color: var(--text-secondary);
     }
     
     .highlight {
-      color: var(--neon-green);
-      font-weight: bold;
+      color: var(--geek-blue);
+      font-weight: 600;
     }
     
-    /* 教育背景 */
-    .edu-card {
-      text-align: center;
-      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+    /* 教育背景与课程 */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
     
     .edu-school {
-      font-size: 2rem;
-      color: var(--neon-green);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
       margin-bottom: 10px;
     }
     
-    .edu-major {
+    .edu-sub {
       font-size: 1.3rem;
-      color: var(--text-primary);
+      color: var(--geek-blue);
+      margin-bottom: 15px;
     }
     
-    .edu-year {
+    .course-title {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .course-tag {
+      background: rgba(36, 51, 71, 0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.95rem;
       color: var(--text-secondary);
-      margin-top: 10px;
     }
     
-    /* 技能标签 */
+    /* 技能特长 */
     .skills-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 20px;
     }
     
     .skill-tag {
       background: var(--bg-secondary);
-      border: 1px solid var(--neon-green);
-      color: var(--neon-green);
-      padding: 10px 25px;
-      border-radius: 25px;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 12px 30px;
+      border-radius: 30px;
       font-size: 1.1rem;
+      font-weight: 500;
       transition: all 0.3s ease;
     }
     
     .skill-tag:hover {
-      background: var(--neon-green);
-      color: var(--bg-primary);
-      box-shadow: 0 0 15px var(--neon-green);
+      border-color: var(--geek-blue);
+      background: rgba(0, 210, 255, 0.05);
+      color: var(--geek-blue);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
     }
     
-    /* 博客卡片 */
+    /* 博客卡片深度扩充 */
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: 1fr;
       gap: 30px;
     }
     
     .blog-card {
       background: var(--bg-card);
-      border-left: 4px solid var(--neon-green);
-      padding: 25px;
-      transition: all 0.3s ease;
+      border-left: 4px solid var(--geek-blue);
+      padding: 30px;
     }
     
-    .blog-card:hover {
-      transform: translateX(10px);
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
     }
     
     .blog-date {
-      color: var(--neon-green-dim);
-      font-size: 0.85rem;
-      margin-bottom: 10px;
+      color: var(--geek-blue-dim);
+      font-size: 0.9rem;
+      font-family: monospace;
     }
     
     .blog-title {
-      color: var(--text-primary);
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0;
     }
     
     .blog-summary {
       color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 1.05rem;
+      line-height: 1.8;
     }
     
     /* 兴趣爱好 */
     .hobby-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 30px;
     }
     
     .hobby-card {
-      text-align: center;
-      padding: 40px;
-      background: var(--bg-card);
-      border-radius: 15px;
-      border: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-    }
-    
-    .hobby-card:hover {
-      border-color: var(--neon-green);
-      transform: scale(1.05);
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      padding: 35px;
     }
     
     .hobby-icon {
-      font-size: 4rem;
-      margin-bottom: 20px;
+      font-size: 3.5rem;
+      background: rgba(0, 210, 255, 0.1);
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 210, 255, 0.2);
     }
     
-    .hobby-name {
-      font-size: 1.3rem;
-      color: var(--neon-green);
-      margin-bottom: 10px;
+    .hobby-info h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+    
+    .hobby-info p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.6;
     }
     
     /* 页脚 */
     .geek-footer {
       background: var(--bg-secondary);
-      border-top: 1px solid var(--neon-green);
-      padding: 40px 20px;
+      border-top: 1px solid var(--border-color);
+      padding: 50px 20px;
       text-align: center;
       position: relative;
       z-index: 2;
     }
     
     .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     
     .footer-links a {
-      color: var(--neon-green);
+      color: var(--geek-blue);
       text-decoration: none;
+      font-size: 1.1rem;
       transition: all 0.3s ease;
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      padding: 10px 25px;
+      border-radius: 8px;
     }
     
     .footer-links a:hover {
-      text-shadow: 0 0 10px var(--neon-green);
+      background: rgba(0, 210, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
     }
     
     .copyright {
       color: var(--text-secondary);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -367,7 +396,7 @@ layout: null
       <li><a href="#about">关于我</a></li>
       <li><a href="#education">教育背景</a></li>
       <li><a href="#skills">技能特长</a></li>
-      <li><a href="#blog">博客文章</a></li>
+      <li><a href="#blog">技术博客</a></li>
       <li><a href="#hobbies">兴趣爱好</a></li>
     </ul>
   </nav>
@@ -377,27 +406,40 @@ layout: null
     <div class="hero-content">
       <h1 class="glitch-name">赵杰</h1>
       <div class="typewriter">智能科学与技术专业</div>
-      <p class="motto">我与我周旋久，宁做我。</p>
+      <p class="motto">“ 我与我周旋久，宁做我 。”</p>
     </div>
   </section>
 
   <section class="section" id="about">
     <h2 class="section-title">关于我</h2>
     <div class="card">
-      <div class="about-content">
-        <p>你好，我是<span class="highlight">赵杰</span>。</p>
-        <p>目前就读于云南大学智能科学与技术专业（2023级）。</p>
-        <p>这是一个充满极客风格的创新实验作业主页。</p>
+      <div class="about-text">
+        <p>你好！我是 <span class="highlight">赵杰</span>。目前就读于云南大学智能科学与技术专业。</p>
+        <p>作为2023级的本科生，我对人工智能、智能系统设计以及底层代码开发充满浓厚兴趣。在智能科学日新月异的今天，我致力于探索如何将算法思维融入解决现实世界的复杂问题中。</p>
+        <p>这个主页是我在创新实验课程中精心搭建的技术成果展示窗口。不仅承载着我的基础技能点，也是我探索前沿科学、记录编程修行之旅的数字基地。</p>
       </div>
     </div>
   </section>
 
   <section class="section" id="education">
     <h2 class="section-title">教育背景</h2>
-    <div class="card edu-card">
-      <div class="edu-school">云南大学</div>
-      <div class="edu-major">智能科学与技术</div>
-      <div class="edu-year">2023级</div>
+    <div class="edu-grid">
+      <div class="card">
+        <div class="edu-school">云南大学</div>
+        <div class="edu-sub">智能科学与技术专业 · 2023级</div>
+        <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">自入校以来，系统学习了计算机科学基础理论与智能核心算法，注重理论研究与动手编程实践的结合，积极参与各项学科创新实验项目。</p>
+      </div>
+      <div class="card">
+        <div class="course-title">已修读核心课程</div>
+        <div class="course-list">
+          <span class="course-tag">高级程序设计（C语言）</span>
+          <span class="course-tag">Python智能数据分析</span>
+          <span class="course-tag">网页设计与开发基础</span>
+          <span class="course-tag">数据结构与算法</span>
+          <span class="course-tag">人工智能导论</span>
+          <span class="course-tag">离散数学</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -405,27 +447,44 @@ layout: null
     <h2 class="section-title">技能特长</h2>
     <div class="card">
       <div class="skills-container">
-        <span class="skill-tag">C语言</span>
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">HTML</span>
-        <span class="skill-tag">人工智能基础</span>
+        <span class="skill-tag">C语言程序设计</span>
+        <span class="skill-tag">Python基础开发</span>
+        <span class="skill-tag">HTML5 / 网页结构设计</span>
+        <span class="skill-tag">Git / GitHub 版本控制</span>
+        <span class="skill-tag">Linux 基础操作</span>
+        <span class="skill-tag">AI 辅助编程 (Trae/Prompt工程)</span>
       </div>
     </div>
   </section>
 
   <section class="section" id="blog">
-    <h2 class="section-title">博客文章</h2>
+    <h2 class="section-title">技术博客</h2>
     <div class="blog-grid">
+      
       <div class="card blog-card">
-        <div class="blog-date">2024年5月29日</div>
-        <div class="blog-title">深入理解 Python 神经网络基础</div>
-        <div class="blog-summary">探讨在智能科学与技术专业中，如何利用 Python 从零构建简单的神经网络模型，解析反向传播算法的核心逻辑。</div>
+        <div class="blog-header">
+          <h3 class="blog-title">1. 基于 Python 从零构建简单的神经网络模型</h3>
+          <span class="blog-date">2026年5月29日</span>
+        </div>
+        <div class="blog-summary">作为智能科学专业的学生，深入探究机器学习的底层数学原理非常重要。本文记录了我利用纯 Python 代码和 NumPy 库，在不依赖现成框架的情况下，手动实现前向传播与反向传播算法。深入剖析了梯度下降的数学推导，为后续研究复杂深度学习架构打下坚实基础。</div>
       </div>
+
       <div class="card blog-card">
-        <div class="blog-date">2024年5月20日</div>
-        <div class="blog-title">C语言指针的进阶应用</div>
-        <div class="blog-summary">结合内存管理的底层原理，总结 C 语言中指针的巧妙用法以及在复杂数据结构中的应用实例。</div>
+        <div class="blog-header">
+          <h3 class="blog-title">2. C语言高级特性：指针与多维内存布局详解</h3>
+          <span class="blog-date">2026年5月15日</span>
+        </div>
+        <div class="blog-summary">C语言的灵魂在于指针。在复杂的算法和硬件底层交互中，精确管理指针与内存至关重要。本篇博客总结了多级指针、函数指针的应用场景，并对数组在内存中的连续存储机制进行了可视化拆解，分析了如何避免程序运行中的内存泄漏问题。</div>
       </div>
+
+      <div class="card blog-card">
+        <div class="blog-header">
+          <h3 class="blog-title">3. 初探自动化开发流程：GitHub Actions 部署实践</h3>
+          <span class="blog-date">2026年5月02日</span>
+        </div>
+        <div class="blog-summary">现代软件工程强调持续集成与持续部署 (CI/CD)。在这篇博客中，我详细记录了本次创新实验中如何编写配置 YAML 脚本，让 GitHub 服务器在我每次推送代码到 main 分支时，在云端自动调用 Docker 容器环境编译静态资源并发布。</div>
+      </div>
+
     </div>
   </section>
 
@@ -434,30 +493,78 @@ layout: null
     <div class="hobby-grid">
       <div class="card hobby-card">
         <div class="hobby-icon">🏸</div>
-        <div class="hobby-name">羽毛球</div>
+        <div class="hobby-info">
+          <h3>羽毛球</h3>
+          <p>热衷于课后与同学相约球场。羽毛球快速的节奏能够极大地锻炼我的反应速度，也是我高强度写代码之余放松颈椎、挥洒汗水的最佳解压方式。</p>
+        </div>
       </div>
       <div class="card hobby-card">
         <div class="hobby-icon">🏀</div>
-        <div class="hobby-name">篮球</div>
+        <div class="hobby-info">
+          <h3>篮球</h3>
+          <p>喜欢篮球运动带来的团队配合与激情。场上的默契传导如同精密的代码协同，每次战术成功或流汗奔跑，都让我保持饱满的精神状态。</p>
+        </div>
       </div>
     </div>
   </section>
 
   <footer class="geek-footer">
     <div class="footer-links">
-      <a href="mailto:599802050@qq.com">联系邮箱：599802050@qq.com</a>
+      <a href="mailto:599802050@qq.com">📧 联系我：599802050@qq.com</a>
     </div>
-    <div class="copyright">© 2024 赵杰. All Rights Reserved.</div>
+    <div class="copyright">© 2026 赵杰. 本项目基于 Jekyll + Trae AI 联合构建。保留所有权利。</div>
   </footer>
 
   <script>
-    // 矩阵雨动画效果
+    // 赛博蓝代码雨/数字流特效
     const canvas = document.getElementById('matrix-canvas');
     const ctx = canvas.getContext('2d');
     
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     
-    const chars = '赵杰智能科学与技术01010101PYTHONCHTML';
+    const chars = '01ZHAOJIE智能科学PYTHONCHTML人工智能';
     const fontSize = 14;
-    const columns = canvas.
+    const columns = canvas.width / fontSize;
+    const drops = [];
+    
+    for (let i = 0; i < columns; i++) {
+      drops[i] = 1;
+    }
+    
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(8, 11, 16, 0.06)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars.charAt(Math.floor(Math.random() * chars.length));
+        
+        // 50% 的几率使用炫酷蓝，30% 几率用淡蓝，20% 几率用紫色，制造层次感
+        const rand = Math.random();
+        if (rand > 0.5) {
+          ctx.fillStyle = '#00d2ff'; // 亮蓝
+        } else if (rand > 0.2) {
+          ctx.fillStyle = '#006680'; // 灰蓝
+        } else {
+          ctx.fillStyle = '#9d4edd'; // 霓虹紫
+        }
+        
+        ctx.font = fontSize + 'px monospace';
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    
+    setInterval(drawMatrix, 35);
+    
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
