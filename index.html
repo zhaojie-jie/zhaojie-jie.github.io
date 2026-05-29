@@ -23,7 +23,7 @@
 {"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"zhaojie-jie"},"description":"这是使用 Jekyll 和 Docker 构建的个人主页","headline":"欢迎来到我的主页！","name":"我的创新实验主页","url":"https://zhaojie-jie.github.io/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=ea1eabf0b0981cbb4d8705bde23059e4f473513a">
+    <link rel="stylesheet" href="/assets/css/style.css?v=55527d58fbedfad50892ec9c92b9bd81fb532e2e">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -383,7 +383,237 @@
   .hobby-icon {
     font-size: 4rem;
     margin
+-bottom: 20px;
+  }
+  
+  .hobby-name {
+    font-size: 1.3rem;
+    color: var(--neon-green);
+    margin-bottom: 10px;
+  }
+  
+  .hobby-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+  
+  /* 页脚 */
+  .geek-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--neon-green);
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .footer-quote {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links a {
+    color: var(--neon-green);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    text-shadow: 0 0 10px var(--neon-green);
+  }
+  
+  .copyright {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
 </style>
+
+<!-- 导航栏 -->
+<nav class="geek-nav">
+  <ul>
+    <li><a href="#home">首页</a></li>
+    <li><a href="#about">关于我</a></li>
+    <li><a href="#education">教育背景</a></li>
+    <li><a href="#skills">技能特长</a></li>
+    <li><a href="#blog">博客文章</a></li>
+    <li><a href="#hobbies">兴趣爱好</a></li>
+  </ul>
+</nav>
+
+<!-- 英雄区域 -->
+<section class="hero-section" id="home">
+  <canvas id="matrix-canvas"></canvas>
+  <div class="hero-content">
+    <h1 class="glitch-name">赵杰</h1>
+    <div class="typewriter">创新实验作业展示</div>
+    <p class="motto">代码改变世界，创新引领未来</p>
+  </div>
+</section>
+
+<!-- 关于我 -->
+<section class="section" id="about">
+  <h2 class="section-title">关于我</h2>
+  <div class="card">
+    <div class="about-content">
+      <p>你好！我是<span class="highlight">赵杰</span>，学号<span class="highlight">20231060331</span>。</p>
+      <p>这是一份创新实验作业，我尝试用前端技术打造一个具有极客风格的个人主页。</p>
+      <p>在这里，我将记录我的学习历程，分享技术心得，展示项目成果。</p>
+      <p>希望通过不断的学习与实践，能够在技术道路上走得更远。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 教育背景 -->
+<section class="section" id="education">
+  <h2 class="section-title">教育背景</h2>
+  <div class="card edu-card">
+    <div class="edu-school">某某大学</div>
+    <div class="edu-major">计算机科学与技术专业</div>
+    <div class="edu-year">2023年 - 至今</div>
+  </div>
+</section>
+
+<!-- 技能特长 -->
+<section class="section" id="skills">
+  <h2 class="section-title">技能特长</h2>
+  <div class="card">
+    <div class="skills-container">
+      <span class="skill-tag">网页前端开发</span>
+      <span class="skill-tag">HTML5</span>
+      <span class="skill-tag">CSS3</span>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">响应式设计</span>
+      <span class="skill-tag">版本控制工具</span>
+      <span class="skill-tag">代码调试</span>
+      <span class="skill-tag">问题解决能力</span>
+    </div>
+  </div>
+</section>
+
+<!-- 博客文章 -->
+<section class="section" id="blog">
+  <h2 class="section-title">博客文章</h2>
+  <div class="blog-grid">
+    <div class="card blog-card">
+      <div class="blog-date">2024年1月15日</div>
+      <div class="blog-title">如何打造极客风格的个人网站</div>
+      <div class="blog-summary">分享我在设计这个主页时的思路与技巧，包括暗色主题的选择、霓虹绿配色方案的应用，以及矩阵雨动画效果的实现方法。</div>
+    </div>
+    <div class="card blog-card">
+      <div class="blog-date">2024年1月10日</div>
+      <div class="blog-title">前端开发学习路线总结</div>
+      <div class="blog-summary">整理了我学习前端开发过程中的经验，从基础语法到框架应用，希望能给初学者一些参考和帮助。</div>
+    </div>
+    <div class="card blog-card">
+      <div class="blog-date">2024年1月5日</div>
+      <div class="blog-title">创新实验课程心得体会</div>
+      <div class="blog-summary">记录我在创新实验课程中的收获与感悟，探讨如何将理论知识与实际项目相结合。</div>
+    </div>
+  </div>
+</section>
+
+<!-- 兴趣爱好 -->
+<section class="section" id="hobbies">
+  <h2 class="section-title">兴趣爱好</h2>
+  <div class="hobby-grid">
+    <div class="card hobby-card">
+      <div class="hobby-icon">💻</div>
+      <div class="hobby-name">编程开发</div>
+      <div class="hobby-desc">热爱编写代码，享受创造的乐趣</div>
+    </div>
+    <div class="card hobby-card">
+      <div class="hobby-icon">📚</div>
+      <div class="hobby-name">技术阅读</div>
+      <div class="hobby-desc">关注前沿技术，持续学习成长</div>
+    </div>
+    <div class="card hobby-card">
+      <div class="hobby-icon">🎮</div>
+      <div class="hobby-name">电子竞技</div>
+      <div class="hobby-desc">适度游戏，放松身心</div>
+    </div>
+    <div class="card hobby-card">
+      <div class="hobby-icon">🎵</div>
+      <div class="hobby-name">音乐欣赏</div>
+      <div class="hobby-desc">编程时的最佳伴侣</div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="geek-footer">
+  <div class="footer-quote">"学无止境，勇攀高峰"</div>
+  <div class="footer-links">
+    <a href="mailto:zhaojie@example.com">电子邮箱</a>
+    <a href="#">代码仓库</a>
+    <a href="#">个人博客</a>
+  </div>
+  <div class="copyright">© 2024 赵杰. 保留所有权利。</div>
+</footer>
+
+<script>
+  // 矩阵雨动画效果
+  const canvas = document.getElementById('matrix-canvas');
+  const ctx = canvas.getContext('2d');
+  
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  const chars = '赵杰创新实验作业0123456789ABCDEF';
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops = [];
+  
+  for (let i = 0; i < columns; i++) {
+    drops[i] = 1;
+  }
+  
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = '#00ff00';
+    ctx.font = fontSize + 'px monospace';
+    
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars.charAt(Math.floor(Math.random() * chars.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+  
+  setInterval(drawMatrix, 35);
+  
+  // 窗口大小改变时重新设置画布尺寸
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+  
+  // 平滑滚动
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+
 
 
       </section>
