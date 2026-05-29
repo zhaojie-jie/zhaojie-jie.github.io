@@ -6,3 +6,318 @@
 - 学号：20231060331
 
 在这里我将记录我的学习过程。
+
+<style>
+  /* 暗黑极客风格全局样式 */
+  :root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-card: #1a1a1a;
+    --neon-green: #00ff00;
+    --neon-green-dim: #00cc00;
+    --text-primary: #e0e0e0;
+    --text-secondary: #888888;
+    --border-color: #333333;
+  }
+  
+  body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Courier New', monospace !important;
+  }
+  
+  /* 导航栏样式 */
+  .geek-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--neon-green);
+    z-index: 1000;
+    padding: 15px 0;
+  }
+  
+  .geek-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .geek-nav a {
+    color: var(--neon-green);
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .geek-nav a:hover {
+    text-shadow: 0 0 10px var(--neon-green);
+  }
+  
+  .geek-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-green);
+    transition: width 0.3s ease;
+  }
+  
+  .geek-nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* 英雄区域 */
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+  
+  #matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .glitch-name {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--neon-green);
+    text-shadow: 0 0 20px var(--neon-green);
+    margin-bottom: 20px;
+    animation: glitch 2s infinite;
+  }
+  
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+  
+  .typewriter {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    border-right: 3px solid var(--neon-green);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+    max-width: 0;
+  }
+  
+  @keyframes typing {
+    to { max-width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .motto {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+  
+  .motto::before {
+    content: '"';
+    color: var(--neon-green);
+    font-size: 2rem;
+  }
+  
+  .motto::after {
+    content: '"';
+    color: var(--neon-green);
+    font-size: 2rem;
+  }
+  
+  /* 内容区块通用样式 */
+  .section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: var(--neon-green);
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    position: relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: var(--neon-green);
+    margin: 20px auto;
+    box-shadow: 0 0 10px var(--neon-green);
+  }
+  
+  /* 卡片样式 */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  /* 关于我 */
+  .about-content {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--text-secondary);
+  }
+  
+  .highlight {
+    color: var(--neon-green);
+    font-weight: bold;
+  }
+  
+  /* 教育背景 */
+  .edu-card {
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+  }
+  
+  .edu-school {
+    font-size: 2rem;
+    color: var(--neon-green);
+    margin-bottom: 10px;
+  }
+  
+  .edu-major {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+  }
+  
+  .edu-year {
+    color: var(--text-secondary);
+    margin-top: 10px;
+  }
+  
+  /* 技能标签 */
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .skill-tag {
+    background: var(--bg-secondary);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-tag:hover {
+    background: var(--neon-green);
+    color: var(--bg-primary);
+    box-shadow: 0 0 15px var(--neon-green);
+  }
+  
+  /* 博客卡片 */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .blog-card {
+    background: var(--bg-card);
+    border-left: 4px solid var(--neon-green);
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateX(10px);
+  }
+  
+  .blog-date {
+    color: var(--neon-green-dim);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  .blog-title {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  
+  .blog-summary {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* 兴趣爱好 */
+  .hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .hobby-card {
+    text-align: center;
+    padding: 40px;
+    background: var(--bg-card);
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+  }
+  
+  .hobby-card:hover {
+    border-color: var(--neon-green);
+    transform: scale(1.05);
+  }
+  
+  .hobby-icon {
+    font-size: 4rem;
+    margin
