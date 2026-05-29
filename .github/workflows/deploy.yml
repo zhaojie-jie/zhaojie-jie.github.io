@@ -1,0 +1,35 @@
+name: Deploy Jekyll to gh-pages
+
+# 触发条件：当有代码推送到 main 分支时
+on:
+  push:
+    branches:
+      - main
+
+# 任务定义
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    # 赋予此脚本推送到仓库的权限
+    permissions:
+      contents: write
+      
+    steps:
+      # 1. 检出(下载)源代码
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # 2. 编译 Jekyll 网站
+      - name: Build Jekyll site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      # 3. 将编译好的内容推送到 gh-pages 分支
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
